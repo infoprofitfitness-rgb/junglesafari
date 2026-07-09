@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Check, ArrowRight } from "lucide-react";
 import { tours, whatsappLink, whatsappMessages } from "@/lib/data";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function Tours() {
   return (
@@ -61,7 +62,7 @@ export default function Tours() {
                   ))}
                 </ul>
 
-                <a
+                <TrackedLink
                   href={whatsappLink(whatsappMessages.tour(tour.title))}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -69,7 +70,7 @@ export default function Tours() {
                 >
                   Book Now
                   <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                </a>
+                </TrackedLink>
               </div>
             </article>
           ))}

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Mail, Phone, Clock, Send } from "lucide-react";
 import { safariOptions, siteConfig, whatsappLink, whatsappMessages } from "@/lib/data";
+import { trackOutboundClick } from "@/lib/analytics";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -13,10 +15,8 @@ export default function Contact() {
     const name = formData.get("name") as string;
     const phone = formData.get("phone") as string;
     const safari = formData.get("safari") as string;
-    window.open(
-      whatsappLink(whatsappMessages.enquiry(name, phone, safari)),
-      "_blank"
-    );
+    const url = whatsappLink(whatsappMessages.enquiry(name, phone, safari));
+    trackOutboundClick(() => window.open(url, "_blank"));
     setSubmitted(true);
   }
 
@@ -45,7 +45,7 @@ export default function Contact() {
                 <Mail className="h-5 w-5 text-accent" />
                 {siteConfig.email}
               </a>
-              <a
+              <TrackedLink
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -53,7 +53,7 @@ export default function Contact() {
               >
                 <Phone className="h-5 w-5 text-accent" />
                 {siteConfig.phone}
-              </a>
+              </TrackedLink>
               <div className="flex items-center gap-3 text-sm text-muted">
                 <Clock className="h-5 w-5 text-accent" />
                 {siteConfig.hours}
@@ -76,9 +76,9 @@ export default function Contact() {
                 </p>
                 <p className="mt-2 text-sm text-muted">
                   Our team will contact you shortly. For immediate assistance, message us on{" "}
-                  <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="text-accent-light hover:underline">
+                  <TrackedLink href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="text-accent-light hover:underline">
                     WhatsApp
-                  </a>
+                  </TrackedLink>
                 </p>
               </div>
             ) : (

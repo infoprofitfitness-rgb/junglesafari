@@ -9,6 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { services, siteConfig, whatsappLink, whatsappMessages } from "@/lib/data";
+import TrackedLink from "@/components/TrackedLink";
 
 const serviceIcons = [Ticket, Truck, UserCheck, Map, Hotel, Camera, Users];
 
@@ -31,22 +32,22 @@ export default function Services() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
+              <TrackedLink
                 href={whatsappLink(whatsappMessages.general)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-background transition-all hover:bg-accent-light"
               >
                 WhatsApp Us
-              </a>
-              <a
+              </TrackedLink>
+              <TrackedLink
                 href={whatsappLink(whatsappMessages.general)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-card-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-accent/40"
               >
                 Book a Safari
-              </a>
+              </TrackedLink>
             </div>
           </div>
 
@@ -93,7 +94,7 @@ export function BookCTA() {
             <p className="mt-6 text-lg font-medium italic text-foreground">
               Your safari. Our responsibility. Your adventure begins here.
             </p>
-            <a
+            <TrackedLink
               href={whatsappLink(whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
@@ -101,7 +102,7 @@ export function BookCTA() {
             >
               Get Started
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </TrackedLink>
           </div>
         </div>
       </div>

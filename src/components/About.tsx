@@ -1,5 +1,6 @@
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { whatsappLink, whatsappMessages } from "@/lib/data";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function About() {
   const highlights = [
@@ -38,7 +39,7 @@ export default function About() {
               ))}
             </ul>
 
-            <a
+            <TrackedLink
               href={whatsappLink(whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
@@ -46,7 +47,7 @@ export default function About() {
             >
               Explore Safaris
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </TrackedLink>
           </div>
 
           <div className="relative">

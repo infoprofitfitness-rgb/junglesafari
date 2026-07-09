@@ -1,5 +1,6 @@
 import { Mail, Phone, Clock } from "lucide-react";
 import { navLinks, siteConfig, tours, whatsappLink } from "@/lib/data";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function Footer() {
   return (
@@ -67,7 +68,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
+                <TrackedLink
                   href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -75,7 +76,7 @@ export default function Footer() {
                 >
                   <Phone className="h-4 w-4 text-accent" />
                   {siteConfig.phone}
-                </a>
+                </TrackedLink>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-accent" />

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { navLinks, siteConfig, whatsappLink, whatsappMessages } from "@/lib/data";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
+          <TrackedLink
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
@@ -38,15 +39,15 @@ export default function Header() {
           >
             <Phone className="h-4 w-4" />
             {siteConfig.phone}
-          </a>
-          <a
+          </TrackedLink>
+          <TrackedLink
             href={whatsappLink(whatsappMessages.general)}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-background transition-all hover:bg-accent-light hover:shadow-lg hover:shadow-accent/20"
           >
             Book Now
-          </a>
+          </TrackedLink>
         </div>
 
         <button
@@ -72,7 +73,7 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-            <a
+            <TrackedLink
               href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
@@ -80,8 +81,8 @@ export default function Header() {
             >
               <Phone className="h-4 w-4" />
               {siteConfig.phone}
-            </a>
-            <a
+            </TrackedLink>
+            <TrackedLink
               href={whatsappLink(whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
@@ -89,7 +90,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
             >
               Book Now
-            </a>
+            </TrackedLink>
           </nav>
         </div>
       )}

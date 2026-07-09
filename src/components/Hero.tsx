@@ -1,5 +1,6 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { whatsappLink, whatsappMessages } from "@/lib/data";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function Hero() {
   return (
@@ -41,7 +42,7 @@ export default function Hero() {
           </div>
 
           <div className="animate-fade-up mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row" style={{ animationDelay: "0.3s" }}>
-            <a
+            <TrackedLink
               href={whatsappLink(whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
@@ -49,8 +50,8 @@ export default function Hero() {
             >
               Book Your Safari
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
+            </TrackedLink>
+            <TrackedLink
               href={whatsappLink(whatsappMessages.general)}
               target="_blank"
               rel="noopener noreferrer"
@@ -58,7 +59,7 @@ export default function Hero() {
             >
               <Phone className="h-4 w-4 text-accent" />
               WhatsApp Us
-            </a>
+            </TrackedLink>
           </div>
         </div>
       </div>

@@ -2,11 +2,12 @@
 
 import { MessageCircle, CalendarCheck } from "lucide-react";
 import { whatsappLink, whatsappMessages } from "@/lib/data";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function FloatingIcons() {
   return (
     <div className="fixed bottom-6 right-4 z-50 flex flex-col items-end gap-3 sm:bottom-8 sm:right-6">
-      <a
+      <TrackedLink
         href={whatsappLink(whatsappMessages.general)}
         target="_blank"
         rel="noopener noreferrer"
@@ -17,9 +18,9 @@ export default function FloatingIcons() {
         <span className="pointer-events-none absolute right-full mr-3 hidden whitespace-nowrap rounded-lg border border-card-border bg-card px-3 py-1.5 text-xs font-medium text-foreground shadow-lg opacity-0 transition-opacity group-hover:opacity-100 sm:block">
           Book Safari
         </span>
-      </a>
+      </TrackedLink>
 
-      <a
+      <TrackedLink
         href={whatsappLink(whatsappMessages.general)}
         target="_blank"
         rel="noopener noreferrer"
@@ -31,7 +32,7 @@ export default function FloatingIcons() {
         <span className="pointer-events-none absolute right-full mr-3 hidden whitespace-nowrap rounded-lg border border-card-border bg-card px-3 py-1.5 text-xs font-medium text-foreground shadow-lg opacity-0 transition-opacity group-hover:opacity-100 sm:block">
           WhatsApp Us
         </span>
-      </a>
+      </TrackedLink>
     </div>
   );
 }
