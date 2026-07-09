@@ -1,9 +1,9 @@
 import { Mail, Phone, Clock } from "lucide-react";
-import { navLinks, siteConfig, tours } from "@/lib/data";
+import { navLinks, siteConfig, tours, whatsappLink } from "@/lib/data";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-card-border bg-card pb-24 md:pb-8">
+    <footer className="border-t border-card-border bg-card pb-8">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
@@ -68,7 +68,9 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={siteConfig.phoneLink}
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-accent-light"
                 >
                   <Phone className="h-4 w-4 text-accent" />

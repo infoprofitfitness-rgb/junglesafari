@@ -9,6 +9,20 @@ export const siteConfig = {
   developer: "Flowrush Technologies",
 };
 
+export function whatsappLink(message?: string) {
+  if (!message) return siteConfig.whatsapp;
+  return `${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
+export const whatsappMessages = {
+  general:
+    "Hi, I'm interested in booking a safari with Jungle Safari Experts.",
+  tour: (tourName: string) =>
+    `Hi, I'm interested in booking the ${tourName}.`,
+  enquiry: (name: string, phone: string, safari: string) =>
+    `Hi, I'd like to enquire about a safari.\n\nName: ${name}\nMobile: ${phone}\nSafari: ${safari}`,
+};
+
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },

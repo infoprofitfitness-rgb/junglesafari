@@ -1,4 +1,5 @@
 import { CheckCircle, ArrowRight } from "lucide-react";
+import { whatsappLink, whatsappMessages } from "@/lib/data";
 
 export default function About() {
   const highlights = [
@@ -38,7 +39,9 @@ export default function About() {
             </ul>
 
             <a
-              href="#tours"
+              href={whatsappLink(whatsappMessages.general)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-background transition-all hover:bg-accent-light"
             >
               Explore Safaris

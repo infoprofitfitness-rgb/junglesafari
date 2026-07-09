@@ -8,7 +8,7 @@ import {
   Users,
   ArrowRight,
 } from "lucide-react";
-import { services, siteConfig } from "@/lib/data";
+import { services, siteConfig, whatsappLink, whatsappMessages } from "@/lib/data";
 
 const serviceIcons = [Ticket, Truck, UserCheck, Map, Hotel, Camera, Users];
 
@@ -32,18 +32,20 @@ export default function Services() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href={siteConfig.phoneLink}
+                href={whatsappLink(whatsappMessages.general)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-background transition-all hover:bg-accent-light"
               >
-                Call Us
+                WhatsApp Us
               </a>
               <a
-                href={siteConfig.whatsapp}
+                href={whatsappLink(whatsappMessages.general)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-card-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-accent/40"
               >
-                WhatsApp Us
+                Book a Safari
               </a>
             </div>
           </div>
@@ -92,7 +94,9 @@ export function BookCTA() {
               Your safari. Our responsibility. Your adventure begins here.
             </p>
             <a
-              href="#contact"
+              href={whatsappLink(whatsappMessages.general)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-sm font-semibold text-background transition-all hover:bg-accent-light hover:shadow-xl hover:shadow-accent/25"
             >
               Get Started

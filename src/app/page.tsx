@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Marquee from "@/components/Marquee";
-import Hero, { FloatingCTA } from "@/components/Hero";
+import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import About from "@/components/About";
 import Tours from "@/components/Tours";
@@ -9,6 +9,7 @@ import Services, { BookCTA } from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FloatingIcons from "@/components/FloatingIcons";
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      <FloatingCTA />
+      <FloatingIcons />
     </>
   );
 }

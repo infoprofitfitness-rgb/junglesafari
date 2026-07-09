@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Check, ArrowRight } from "lucide-react";
-import { tours } from "@/lib/data";
+import { tours, whatsappLink, whatsappMessages } from "@/lib/data";
 
 export default function Tours() {
   return (
@@ -62,7 +62,9 @@ export default function Tours() {
                 </ul>
 
                 <a
-                  href="#contact"
+                  href={whatsappLink(whatsappMessages.tour(tour.title))}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group/btn mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-background transition-all hover:bg-accent-light"
                 >
                   Book Now

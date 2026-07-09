@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import { navLinks, siteConfig } from "@/lib/data";
+import { navLinks, siteConfig, whatsappLink, whatsappMessages } from "@/lib/data";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -31,14 +31,18 @@ export default function Header() {
 
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href={siteConfig.phoneLink}
+            href={whatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-accent-light"
           >
             <Phone className="h-4 w-4" />
             {siteConfig.phone}
           </a>
           <a
-            href="#contact"
+            href={whatsappLink(whatsappMessages.general)}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-background transition-all hover:bg-accent-light hover:shadow-lg hover:shadow-accent/20"
           >
             Book Now
@@ -69,14 +73,18 @@ export default function Header() {
               </a>
             ))}
             <a
-              href={siteConfig.phoneLink}
+              href={whatsappLink()}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm font-medium text-accent-light"
             >
               <Phone className="h-4 w-4" />
               {siteConfig.phone}
             </a>
             <a
-              href="#contact"
+              href={whatsappLink(whatsappMessages.general)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-accent px-5 py-2.5 text-center text-sm font-semibold text-background"
               onClick={() => setOpen(false)}
             >

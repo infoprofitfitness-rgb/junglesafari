@@ -2,13 +2,21 @@
 
 import { useState } from "react";
 import { Mail, Phone, Clock, Send } from "lucide-react";
-import { safariOptions, siteConfig } from "@/lib/data";
+import { safariOptions, siteConfig, whatsappLink, whatsappMessages } from "@/lib/data";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const phone = formData.get("phone") as string;
+    const safari = formData.get("safari") as string;
+    window.open(
+      whatsappLink(whatsappMessages.enquiry(name, phone, safari)),
+      "_blank"
+    );
     setSubmitted(true);
   }
 
@@ -38,7 +46,9 @@ export default function Contact() {
                 {siteConfig.email}
               </a>
               <a
-                href={siteConfig.phoneLink}
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm text-muted transition-colors hover:text-accent-light"
               >
                 <Phone className="h-5 w-5 text-accent" />
@@ -65,9 +75,9 @@ export default function Contact() {
                   Thank you for your enquiry!
                 </p>
                 <p className="mt-2 text-sm text-muted">
-                  Our team will contact you shortly. For immediate assistance, call{" "}
-                  <a href={siteConfig.phoneLink} className="text-accent-light hover:underline">
-                    {siteConfig.phone}
+                  Our team will contact you shortly. For immediate assistance, message us on{" "}
+                  <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="text-accent-light hover:underline">
+                    WhatsApp
                   </a>
                 </p>
               </div>

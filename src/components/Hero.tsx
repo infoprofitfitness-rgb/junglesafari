@@ -1,5 +1,5 @@
-import { ArrowRight, Phone, MessageCircle } from "lucide-react";
-import { siteConfig } from "@/lib/data";
+import { ArrowRight, Phone } from "lucide-react";
+import { whatsappLink, whatsappMessages } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -42,45 +42,26 @@ export default function Hero() {
 
           <div className="animate-fade-up mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row" style={{ animationDelay: "0.3s" }}>
             <a
-              href="#contact"
+              href={whatsappLink(whatsappMessages.general)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex w-full items-center justify-center gap-2 rounded-full bg-accent px-8 py-4 text-sm font-semibold text-background transition-all hover:bg-accent-light hover:shadow-xl hover:shadow-accent/25 sm:w-auto"
             >
               Book Your Safari
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href={siteConfig.phoneLink}
+              href={whatsappLink(whatsappMessages.general)}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-full border border-card-border bg-card px-8 py-4 text-sm font-semibold text-foreground transition-all hover:border-accent/40 hover:bg-jungle/20 sm:w-auto"
             >
               <Phone className="h-4 w-4 text-accent" />
-              Call Now
+              WhatsApp Us
             </a>
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-export function FloatingCTA() {
-  return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-2 border-t border-card-border bg-background/95 p-3 backdrop-blur-xl md:hidden">
-      <a
-        href={siteConfig.whatsapp}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex flex-1 items-center justify-center gap-2 rounded-full bg-[#25D366] py-3 text-sm font-semibold text-white"
-      >
-        <MessageCircle className="h-4 w-4" />
-        WhatsApp
-      </a>
-      <a
-        href={siteConfig.phoneLink}
-        className="flex flex-1 items-center justify-center gap-2 rounded-full bg-accent py-3 text-sm font-semibold text-background"
-      >
-        <Phone className="h-4 w-4" />
-        Call Now
-      </a>
-    </div>
   );
 }
