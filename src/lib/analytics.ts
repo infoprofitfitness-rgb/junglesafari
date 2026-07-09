@@ -1,4 +1,5 @@
 export const GOOGLE_ADS_CONVERSION = "AW-17986578873/_wzlCOjNm80cELnT1YBD";
+export const GOOGLE_ADS_PAGE_VIEW = "AW-17986578873/pYnRCIiyuM0cELnT1YBD";
 
 declare global {
   interface Window {
@@ -27,4 +28,15 @@ export function trackOutboundClick(callback?: () => void) {
   }
 
   gtag("event", "conversion", options);
+}
+
+export function trackPageView() {
+  if (typeof window === "undefined") return;
+
+  const gtag = window.gtag;
+  if (!gtag) return;
+
+  gtag("event", "conversion", {
+    send_to: GOOGLE_ADS_PAGE_VIEW,
+  });
 }
