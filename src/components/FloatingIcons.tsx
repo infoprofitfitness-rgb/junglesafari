@@ -1,17 +1,15 @@
 "use client";
 
 import { MessageCircle, Phone } from "lucide-react";
-import { whatsappLink, whatsappMessages } from "@/lib/data";
+import { whatsappLink, whatsappMessages, siteConfig } from "@/lib/data";
 import TrackedLink from "@/components/TrackedLink";
 
 export default function FloatingIcons() {
   return (
     <>
       <TrackedLink
-        href={whatsappLink(whatsappMessages.general)}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Call us on WhatsApp"
+        href={siteConfig.phoneLink}
+        aria-label="Call us"
         className="group fixed bottom-6 left-4 z-50 flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-full bg-accent text-background shadow-lg shadow-accent/25 transition-all hover:scale-110 hover:bg-accent-light hover:shadow-xl hover:shadow-accent/35 sm:bottom-8 sm:left-6 sm:h-20 sm:w-20"
       >
         <Phone className="h-8 w-8 sm:h-9 sm:w-9" />
